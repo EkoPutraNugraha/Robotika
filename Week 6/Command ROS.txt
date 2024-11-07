@@ -1,0 +1,38 @@
+mkdir ~/PRM
+cd PRM
+catkin_make
+source devel/setup.bash
+echo "source ~/PRM/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+cd ~/PRM/src
+catkin create_pkg prm_planner rospy std_msgs 
+cd prm_planner
+nano ~/catkin_ws/src/prm_planner/src/prm.py
+nano ~/PRM/src/prm_planner/src/prm.py
+chmod +x ~/PRM/src/prm_planner/src/prm/prm.py
+nano ~/PRM/src/prm_planner/src/prm.py
+nano ~/PRM/src/prm_planner/config/params.yaml
+nano ~/PRM/src/prm_planner/launch/prm.launch
+cd ~/PRM
+catkin_make
+source devel/setup.bash
+roslaunch prm_planner prm.launch
+roscore
+
+git clone https://github.com/nishadg246/Probabilistic-Roadmap.git
+cd Probabilistic-Roadmap
+catkin_make
+source devel/setup.bash
+rosrun rrt-planning prm
+rviz
+
+
+git clone https://github.com/malintha/rrt-ros.git
+cd rrt-ros
+catkin_make
+source devel/setup.bash
+rosrun rrt-planning rrt
+
+
+
+
