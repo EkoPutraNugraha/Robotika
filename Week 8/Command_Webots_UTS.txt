@@ -1,0 +1,5 @@
+cd sesuai path yang diinginkan
+git clone https://github.com/silvery107/vision-line-follower.git
+
+instalasi python
+cd ..\python.exe -m pip install numpy
