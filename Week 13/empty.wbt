@@ -1,0 +1,238 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.5090184217834093 -0.8509509133634109 -0.12954840535917062 0.6250483739713506
+  position -0.6892987102902488 0.7836196754184117 1.1073697615803106
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation -0.2731465737281739 0.0059501200318390415 0.3691496179359703
+  rotation -0.0002597715841715681 -0.9999999447116791 -0.0002075942261964742 -0.5634471548926197
+  children [
+    GPS {
+    }
+    DEF WL Hinge2Joint {
+      jointParameters HingeJointParameters {
+        position 0.6301471258308975
+        axis 0 1 0
+        anchor 0.045 0.025 -0.0505
+      }
+      jointParameters2 JointParameters {
+        position -178.7908701441781
+      }
+      device [
+        Brake {
+          name "steer_left_brake"
+        }
+        RotationalMotor {
+          name "steer_left_motor"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "front_left_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 -0.0505
+        rotation -0.1296121807387694 -0.6682458075637923 -0.7325627777041062 2.5095960400391872
+        children [
+          DEF WL Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE WL
+        physics Physics {
+        }
+        linearVelocity 0.037109714273607854 1.7941256956380168e-05 -0.09741585080443925
+        angularVelocity -3.756129761919493 0.7667726338388101 -1.5393197258554405
+      }
+    }
+    InertialUnit {
+      name "imu"
+    }
+    DEF WR Hinge2Joint {
+      jointParameters HingeJointParameters {
+        position 0.36998849498672837
+        axis 0 1 0
+        anchor 0.045 0.025 0.0505
+      }
+      jointParameters2 JointParameters {
+        position -157.04231396419416
+      }
+      device [
+        Brake {
+          name "steer_right_brake"
+        }
+        RotationalMotor {
+          name "steer_right_motor"
+        }
+      ]
+      device2 [
+        RotationalMotor {
+          name "front_right_motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 0.0505
+        rotation -0.9666267478844257 -0.19823441151157717 0.16228323501531958 4.671469448132916
+        children [
+          DEF Wheel_Right Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE Wheel_Right
+        physics Physics {
+        }
+        linearVelocity 0.10048277539263172 2.9221270152616627e-05 -0.13639740688265106
+        angularVelocity -5.407880295833919 0.8226553842571855 -4.1035152705519256
+      }
+    }
+    DEF Windscreen Solid {
+      translation 0.066 0.051 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.08 0.78 1
+            roughness 0.2
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.03 0.01 0.08
+          }
+        }
+      ]
+      name "solid(4)"
+    }
+    DEF DWL HingeJoint {
+      jointParameters HingeJointParameters {
+        position -165.96363662642304
+        axis 0 0 1
+        anchor -0.045 0.025 -0.0505
+      }
+      device [
+        Brake {
+          name "left_brake"
+        }
+        PositionSensor {
+          name "left_pos_sensor"
+        }
+        RotationalMotor {
+          name "left_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 -0.0505
+        rotation -0.19233331372810306 0.6939061297307753 -0.6939035808759195 2.7615680251903987
+        children [
+          DEF Driven_Wheel_Left Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE Driven_Wheel_Left
+        physics Physics {
+        }
+        linearVelocity 0.07185291174645941 1.2817366769068996e-05 -0.040928241907512264
+        angularVelocity -1.6404353117629682 0.7509789911242775 -2.6793820262178447
+      }
+    }
+    DEF DWR HingeJoint {
+      jointParameters HingeJointParameters {
+        position -140.9367354543207
+        axis 0 0 1
+        anchor -0.045 0.025 0.0505
+      }
+      device [
+        Brake {
+          name "right_brake"
+        }
+        PositionSensor {
+          name "right_pos_sensor"
+        }
+        RotationalMotor {
+          name "right_motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 0.05049999999999999
+        rotation -0.15437058657965935 0.6986319874120626 -0.6986294211981942 2.835270571068211
+        children [
+          DEF Driven_Wheel_Right Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE Driven_Wheel_Right
+        physics Physics {
+        }
+        linearVelocity 0.13523173460985588 2.4095489130670536e-05 -0.0799100787807039
+        angularVelocity -3.261681103270277 0.7737246800747691 -5.370330148579249
+      }
+    }
+    DEF Chassis Transform {
+      translation 0 0.035 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.78 0.08
+            roughness 1
+            metalness 0.25
+          }
+          geometry Box {
+            size 0.16 0.04 0.1
+          }
+        }
+      ]
+    }
+    Accelerometer {
+    }
+  ]
+  boundingObject USE Chassis
+  physics Physics {
+  }
+  controller "kf_variance"
+  linearVelocity 0.0861694853699879 2.1018883174230527e-05 -0.08866302663262593
+  angularVelocity -6.514158918731458e-05 0.7358166011847687 0.00010689518018440373
+}
+UnevenTerrain {
+  size 50 0.01 50
+}
